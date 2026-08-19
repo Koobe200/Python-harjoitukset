@@ -8,6 +8,14 @@ naulam = input('anna naulat: ')
 
 luotim = input('anna luodit: ')
 
-summa = luoti*float(luotim)+naula*float(naulam)+leivisk*float(leiviskm)
+summa = float(luoti)*float(luotim)+float(naula)*float(naulam)+float(leivisk)*float(leiviskm)
 
 print('Massa nykymittojen mukaan:')
+
+kilogramma = summa/1000
+
+print(int(kilogramma), 'kilogrammaa')
+
+gramma = summa - (int(kilogramma)*1000)
+rounded_gramma = round(gramma, 3)
+print(float(rounded_gramma), 'grammaa')
