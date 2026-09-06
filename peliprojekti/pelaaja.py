@@ -10,7 +10,7 @@ if age < 12:
 else:
     print('Hei!, Nimesi on ', nimi, ' ja ikäsi on ',age,'v' )
     while True:
-        valikko = "Valitse yksi vaihtoehtoista:\n1. Vuosiluku\n2. paras metropolia kampus \n3. osta haalarimerkkejä \n0 LOPETUS'\n"
+        valikko = "Valitse yksi komennoista:\n1. Vuosiluku\n2. paras metropolia kampus \n3. osta haalarimerkkejä \n0 LOPETUS'\n"
         valinta_main= int(input(valikko))
 
         if valinta_main == 1:
