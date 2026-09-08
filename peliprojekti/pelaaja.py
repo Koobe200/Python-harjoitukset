@@ -1,6 +1,33 @@
 nimi = input('Mikä nimesi on? ')    
 age = int(input('Mikä ikäsi on vuosina? '))
 
+esinelista=[]
+def lisalista():
+      
+    while True:
+        asia=input('Lisää esine listaan, jos haluat lopettaa lisäämisen kirjoita "Lopeta" ')
+        asiatod=asia.upper()
+        if asiatod == 'LOPETA':
+            print('lopetetaan listaan lisääminen')
+            break
+        esinelista.append(asia)
+
+    
+def printlista():
+     print('Lista sisältää:')
+     for i in esinelista:
+          print(i)
+
+def jarjestyslista():
+     esinelista.sort(reverse=True)
+     print('Lista sisältää väärinpäin katottuna:')
+     for i in esinelista:
+          print(i)
+
+
+
+
+
 
 
 if age < 12:
@@ -10,15 +37,15 @@ if age < 12:
 else:
     print('Hei!, Nimesi on ', nimi, ' ja ikäsi on ',age,'v' )
     while True:
-        valikko = "Valitse yksi komennoista:\n1. Vuosiluku\n2. paras metropolia kampus \n3. osta haalarimerkkejä \n0 LOPETUS'\n"
+        valikko = "Valitse yksi komennoista:\n1. Listalisäys\n2. Listan tulostus \n3. Lista väärinpäin ja tulostus \n0 LOPETUS'\n"
         valinta_main= int(input(valikko))
 
         if valinta_main == 1:
-            print('nyt on 2026')
+            lisalista()
         elif valinta_main == 2:
-                print('Karamalmin kampus')
+                printlista()
         elif valinta_main == 3:
-                    print('https://hoopee.fi/collections/haalarimerkit')
+                    jarjestyslista()
         elif valinta_main == 0:
             print('ohjelma lopetetaan')
             break
