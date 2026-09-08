@@ -18,10 +18,16 @@ Tein tehtävät 1, 2, 3, 4
 
 Tein tehtävät 1, 2, 3, 4, 5, 6
 
+### lisäksi peliprojekti 2 paketissa
+
 ## Moduuli 6
 
-Tein tehtävät 1, 2, 3, 4
+Tein tehtävät 1, 2, 3, 4 
 
 ## Moduuli 7
 
 Tein tehtävät 1, 2, 3, 4, 5, 6
+
+### lisäksi peliprojekti 3 paketissa
+
+## Moduuli 8 
