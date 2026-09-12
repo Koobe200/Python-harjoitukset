@@ -31,3 +31,5 @@ Tein tehtävät 1, 2, 3, 4, 5, 6
 ### lisäksi peliprojekti 3 paketissa
 
 ## Moduuli 8 
+
+Tein tehtävät 1, 2 , 3
