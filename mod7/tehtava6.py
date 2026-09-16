@@ -21,7 +21,7 @@ print('Ensimmäisen pitsan hinta neliömetreiltä on',piza1, 'euroa')
 piza2=pizzahinta(piza2halk,piza2hinta)
 print('toisen pitsan hinta neliömetreiltä on',piza2, 'euroa')
 
-if piza1 < piza2:
+if piza1 > piza2:
     print('Ensimmäisellä pitsalla on parempi hinta laatu suhde')
 else:
     print('Toisella pitsalla on parempi hinta laatu suhde')
