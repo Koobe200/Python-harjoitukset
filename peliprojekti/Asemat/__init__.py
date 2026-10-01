@@ -1,0 +1,1 @@
+from .kirkkonummi import Kirkkonummi
