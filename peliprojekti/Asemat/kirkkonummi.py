@@ -3,14 +3,15 @@ import time
 
 
 
+
 class Kirkkonummi:
     def __init__(self):
         self.nimi="Kirkkonummen asema"
-       
+
 
 #kirkkonummi osion pelikulku
-    def peli(self,pelaaja):
-        self.pelaaja=pelaaja
+    def peli(self):
+        
         self.pelaaja.esinelista.append("HSL-lippu")
         print("Tervetuloa kirkkonummen asemalle!")
         time.sleep(3)
@@ -50,10 +51,11 @@ class Kirkkonummi:
         self.jarjestys="Onnistuukohan ekalla kerralla, paina ENTER jatkaaksesi"
         
         for i in range(3):
+            print("Auto tulosaa... vruuuuum")
+            time.sleep(3)
             print(self.jarjestys)
             input()
             self.onnistuminen=random.randint(0,3)
-            print(self.onnistuminen)
             if self.onnistuminen == 1: 
                 print("Hyvä! Sait kyydin ja ehdit junaan")
                 self.ehtii=True
@@ -63,6 +65,8 @@ class Kirkkonummi:
                 self.jarjestys="Ajaii Onnistuukohan toisella kerralla, paina ENTER jatkaaksesi"
             elif i == 1:
                 self.jarjestys="Kolmas kerta toden sanoo!"
+
+            print("ei ottanut kyytiin")
             
 
 

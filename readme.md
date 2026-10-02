@@ -45,3 +45,7 @@ Tein tehtävät 1, 2, 3, 4
 ## Moduuli 11
 
 Tein tehtävät 1, 2 
+
+## projekti 4 tehty
+
+Peliprojektiin muodostettu luokkia kuten pelaaja ja asemia. Asemat tässsä kohtaa erikseen, sillä ne sisältää omia metodejaan. Esine muuttujaa ei ollut tarpeellista tehdä, sillä esineellä ei ole muita ominaisuuksia kuin vain nimi, eli lista, jossa on stringejä riittää. 

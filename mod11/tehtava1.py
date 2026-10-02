@@ -19,7 +19,7 @@ class Lehti(Julkaisu):
         super().__init__(nimi)
     def tulosta_tiedot(self):
          print(f"Lehden nimi: {self.nimi}")
-         print(f"Päätoimittaja on: {self.paatoimittaja}")
+         print(f"Päätoimittaja on: {self.paatoimittaja}")   
 
 
 aku_ankka=Lehti("Aku Ankka","Aki Hyyppä")
