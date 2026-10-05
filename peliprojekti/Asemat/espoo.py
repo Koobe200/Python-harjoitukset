@@ -1,74 +1,78 @@
 import random
 import time
+from yleisfunktiot import kysy_valinta,havio
 
 
+def Espoo_taso(pelaaja_import):
+    pelaaja=pelaaja_import
+    print("Tervetuloa U junaan! Juna suuntaa tällä hetkellä kohti helsinkiä seuraava asema: Espoo")
+    time.sleep(2)
+    #arvotaan pelaajalle aikamäärä
+    if "pyörä" in pelaaja.esinelista:
+        pyora_paikka(pelaaja)
+    else: 
+        pass
+ 
+    time.sleep(3)
+ 
 
-class Espoo:
-    def __init__(self):
-        self.nimi="Kirkkonummi - Espoo väli"
-       
 
-#kirkkonummi osion pelikulku
-    def peli(self,pelaaja):
-        self.pelaaja=pelaaja
-        self.pelaaja.esinelista.append("HSL-lippu")
-        print("Tervetuloa junaan, suuntaamme seuraavaksi kohti Espoota")
-        time.sleep(3)
-        #arvotaan pelaajalle aikamäärä
+def pyora_paikka(pelaaja_import):
+    pelaaja=pelaaja_import
+    print('Olet päättänyt varastaa pyörän, joten sinun pitää löytää sille paikka junasta')
+    print('Etsitään paikkoja...')
+    time.sleep(3)
+    print('O ou, tilaa ei tunnu löytyvän, sinulla on 2 vaihtoehtoa: \n (1)Pyydä pyörä paikkaa muilta \n (2) Et halua kysyä, joten sysäset vain pyörän johonkin')
+    vaihtoehto=kysy_valinta(2)
 
-       
-        time.sleep(3)
-        if self.aika > 23: 
-            print("sinulla ei ole kiirre, voit kävellä rauhassa junalle")
-            self.kiirre=False
-        else:
-            print("Sinulla on kiirre, et voi vain kävellä")
-            self.kiirre=True 
-        time.sleep(3)
-        if self.kiirre==True:
-            print("Jos haluat ehtiä junaan sinun tulee valita seuraavista vaihtoehtoista:")
-            print('(1) Varasta jonkun pyörä\n(2) Pummi kyyti')
-            self.vaihtoehto=int(input())
-            self.ehtii=False
-            if self.vaihtoehto == 1:
-                self.pyora_varas()
+    if vaihtoehto == 1: 
+        print("Hienoa! haluat olla sosiallinen")
+        print("Pyydät erästä miestä antamaan pyörällesi tilaa, valitse yksi seuraavista vaihtoehdoista:")
+        print("(1) Saanko paikan\n (2) Anna mulle paikka vanha ukko\n (3)Voisisinko saada ystävällisesti paikan ")
+        vastaus=kysy_valinta(3)
+        if vastaus == 1: 
+            ystavallisyys=random.randint(1,4)
+            if ystavallisyys == 1: 
+                havio("Ei riittänyt ihan paikan saamiseen")
             else: 
-                self.pummi()
+                print("Hienoa! sait pyöräpaikan!")
+                pelaaja.esinelista.remove("pyörä")
+        elif vastaus == 2:
+            print("Olipa töykeä tapa, et ollut ystävällinen, joten sinut heitetään junasta ulos")
+            havio("Ei osannu pyytää pyöräpaikkaa ystävällisesti.")
+        else:
+            print("Hienoa! sait pyöräpaikan!")
+            pelaaja.esinelista.remove("pyörä")
 
-
-    def pyora_varas(self):
-        print('Huhhuh mikä varas')
-        time.sleep(3)
-        self.pelaaja.esinelista.append("pyörä")
-        print('Nappasit pyörän niin isossa kiirressä, että sinulta tippui HSL-Lippu')
-        time.sleep(3)
-        self.pelaaja.esinelista.remove("HSL-lippu")
-        print('Joudut menemään junaan ilman lippua,LOL')
-        
-    def pummi(self,):
-        print('Katsotaanpan onko sulla onnea')
-        self.jarjestys="Onnistuukohan ekalla kerralla, paina ENTER jatkaaksesi"
-        
-        for i in range(3):
-            print("Auto tulosaa... vruuuuum")
+    
+    else: 
+        print("Nyt on erikoinen päätös")
+        time.sleep(2)
+        print("Tunget pyöräsi pyörien keskelle, samalla kaadat, yhden miejhen pyörän")
+        time.sleep(2)
+        print("Mies huomaa tämän ja suuttuu sinulle")
+        print("Joudut juoksemaan karkuun, mies jahtaa sinua")
+        pelaaja.esinelista.remove("pyörä")
+        print("päästäksesi karkuun sinun tulee avata ovi toiseen vaunuun. \n\nOvella on 5 napia yritä arvata oikean nappi oven avaamiseen")
+        numero=random.randint(1,5)
+        karkuun=False
+        for i in range(1,4):
+            print(f"Sinulla on {i} yritystä, arvaa numero 1-5 välillä:")
+            arvaus=kysy_valinta(5)
             time.sleep(3)
-            print(self.jarjestys)
-            input()
-            self.onnistuminen=random.randint(0,3)
-            if self.onnistuminen == 1: 
-                print("Hyvä! Sait kyydin ja ehdit junaan")
-                self.ehtii=True
+            if arvaus == numero: 
+                print("Hyvä! Sait oven auki, pääsit karkuun!")
+
+                karkuun=True
                 break
-            
-            if i == 0:
-                self.jarjestys="Ajaii Onnistuukohan toisella kerralla, paina ENTER jatkaaksesi"
-            elif i == 1:
-                self.jarjestys="Kolmas kerta toden sanoo!"
-
-            print("ei ottanut kyytiin")
-            
-
-
-
-
-
+        if karkuun == False:    
+            havio("jäi vihaiselle miehelle kiinni jaa heitettiin ulos")
+        
+        
+def mummo(pelaaja_import):
+    pelaaja=pelaaja_import
+    print("Olet saapunut junaan ja sinun tulee löytää istumapaikka")
+    print("Paina ENTER istuaksesi")
+    input()
+    print("Hieoa! Olet istahtanut alas")
+    print("Huomaat, että kauklahden pysäkillä junaan astuu vanha mummeli")

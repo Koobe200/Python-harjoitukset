@@ -1,8 +1,9 @@
-from Asemat import Kirkkonummi
+from Asemat import Asema
 from pelaaja import Pelaaja
 
 
 pelaaja1 = Pelaaja("megatron")
-kirkkonummi= Kirkkonummi()
+asemat= Asema("kirkkonummi",pelaaja1)
 
-kirkkonummi.peli(pelaaja1)
+asemat.kirkkonummi()
+asemat.espoo()

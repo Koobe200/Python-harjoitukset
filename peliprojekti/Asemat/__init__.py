@@ -1,1 +1,1 @@
-from .kirkkonummi import Kirkkonummi
+from .asema import Asema
