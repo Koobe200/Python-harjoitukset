@@ -1,5 +1,6 @@
-from Asemat import Asema
+from Asemat import Asema, Kirkkonummi, Espoo
 from pelaaja import Pelaaja
+from yleisfunktiot import havio
 import os
 
 
@@ -11,9 +12,20 @@ def aloita_peli(nimi):
     with open(intro, "r") as tiedosto:
         intro = tiedosto.read()
         print(intro)
+    pelaaja1 = Pelaaja(nimi)
+    kirkkonummi=Kirkkonummi("Kirkkonummi", pelaaja1)
+    espoo=Espoo("Espoo", pelaaja1)
+    #leppavaara=Leppavaara("Leppävaara", pelaaja1)
+    #pasila=Pasila("Pasila", pelaaja1)
+    #helsinki=Helsinki("Helsinki", pelaaja1)
 
-    pelaaja1 = Pelaaja("nimi")
-    asemat= Asema("kirkkonummi",pelaaja1)
+    
+    asemat=[kirkkonummi,espoo]
 
-    asemat.kirkkonummi()
-    asemat.espoo()
+    for asema in asemat:
+        
+        asema.pelaa()
+        print(f"aikaa on jäljellä {pelaaja1.aika} - minuuttia")
+        if pelaaja1.aika <= 0:
+                havio("Aika loppui kesken :(")
+        pelaaja1.sijainti+=1

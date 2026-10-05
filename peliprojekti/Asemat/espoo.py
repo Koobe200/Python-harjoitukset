@@ -6,7 +6,8 @@ from .asema import Asema
 
 class Espoo(Asema):
     def __init__(self, nimi, pelaaja):
-        super().__init__(nimi,pelaaja)
+        self.pelaaja=pelaaja
+        super().__init__(nimi)
         
 
     def pelaa(self):
