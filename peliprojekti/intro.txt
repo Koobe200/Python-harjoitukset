@@ -1,0 +1,12 @@
+
+            ##    ##         ##   ##    ##   ###     ##     ####
+            ##    ##  ###    ##   ##    ##   ## ##   ##   ##    ##
+            ##    ##       # ##   ##    ##   ##   ## ##   ########
+            ########       ####   ########   ##     ###   ##    ##
+
+    #####################################################################
+        ##      ##      ##      ##      ##       ##       ##       ##
+    #####################################################################
+
+Hei! ja tervetuloa {pelaaja_nimi} pelaamaan huikeeta haastetta: U junalla perille!
+Sinun tavoitteena on pelaaja lähteä kirkkonummelta, suorittaa erillaisia haasteita, ja päästä perille valitsemaasi asemaan

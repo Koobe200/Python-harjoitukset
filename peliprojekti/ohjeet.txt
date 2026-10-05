@@ -1,0 +1,13 @@
+
+
+Pian saat valita vaikeustason,jonka perusteella sinulle annetaan aikaraja, jossa sinun tulee päästä perille. 
+
+Kuten kaikki tiedämme U- junalla meneminen ei ole aina niin helppoa ja tämän takia kohtaat erillaisia haasteita matkan varella, 
+joista isnun tulee selviytyä. Pelin aikana sinulta kysytään erillaisia kysymyksiä ja vaihtoehtoa, vastaa vain joko numerolla tai painamalla ENTER. 
+
+Sinulla on kaksi muuttujaa: 
+
+AIKA: Seuraa tätä koko ajan, loppuessa häviät pelin
+YSTÄVÄLLISYYS: Tämän noustessa voit saada erillaisia etuja pelin aikana, laskiessa voit taas saada hankaluukisa
+
+Paina ENTERIÄ kun olet lukenut ohjeet
