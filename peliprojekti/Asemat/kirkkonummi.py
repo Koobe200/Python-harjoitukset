@@ -5,8 +5,7 @@ from .asema import Asema
 
 class Kirkkonummi(Asema):
     def __init__(self, nimi, pelaaja):
-        self.pelaaja=pelaaja
-        super().__init__(nimi,)
+        super().__init__(nimi,pelaaja)
         
     def pelaa(self):
         self.pelaaja.esinelista.append("HSL-lippu")

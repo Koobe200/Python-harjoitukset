@@ -46,3 +46,10 @@ pelaaja -----
     
 -- huumeiden otto on syy miks lopussa ei saa mitään
 
+# Espoo 
+    Jos pelaaja varastanut pyörän haaste on laittaaa pyörä oikealle paikalle, jos pelaajalla on kyyti pummittuna, hän joutuu lapioimaan multaa, jonka johdosta joutuu peseytymään vessassa, jos pelaaja ei auta työmiehiä, hänellä tulee hidastumista joka nostaa haasteita pelin aikana
+
+
+
+# leppävaara            
+    Vessa tapahtuu, jos pelaaja juo limpparia, hän joutuu käymään vessassa. Vessassa tulee kovaa jyskytystä ja riippuen antaako pelaaja kivan vastauksen 

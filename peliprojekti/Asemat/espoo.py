@@ -6,8 +6,7 @@ from .asema import Asema
 
 class Espoo(Asema):
     def __init__(self, nimi, pelaaja):
-        self.pelaaja=pelaaja
-        super().__init__(nimi)
+        super().__init__(nimi,pelaaja)
         
 
     def pelaa(self):
@@ -18,10 +17,9 @@ class Espoo(Asema):
         if "pyörä" in self.pelaaja.esinelista:
             self.pyora_paikka()
         else: 
-            pass
-    
+            self.mummo
         time.sleep(3)
-    
+        print("Tervetuloa Espoon asemalle!")
 
 
     def pyora_paikka(self):
@@ -42,13 +40,13 @@ class Espoo(Asema):
                     havio("Ei riittänyt ihan paikan saamiseen")
                 else: 
                     print("Hienoa! sait pyöräpaikan!")
-                    self.pelaaja.esinelista.remove("pyörä")
+                    
             elif vastaus == 2:
                 print("Olipa töykeä tapa, et ollut ystävällinen, joten sinut heitetään junasta ulos")
                 havio("Ei osannu pyytää pyöräpaikkaa ystävällisesti.")
             else:
                 print("Hienoa! sait pyöräpaikan!")
-                self.pelaaja.esinelista.remove("pyörä")
+             
 
         
         else: 
@@ -81,3 +79,31 @@ class Espoo(Asema):
         input()
         print("Hieoa! Olet istahtanut alas")
         print("Huomaat, että kauklahden pysäkillä junaan astuu vanha mummeli")
+        print("Junassa ei ole tilaa istua, joten mummeli joutuu seistä")
+        print("Mitä aijot tehdä?")
+        print("(1) Istua paikallasi\n (2) Anna oma paikkasi mummelille \n (3) Pyydä jotakuta muuta antamaan paikkansa")
+        vaihtoehto=kysy_valinta(3)
+
+        if vaihtoehto == 1:
+            print("Et välittänyt mummon tilanteesta, menetät 2 ystävällisyys pistettä")
+            self.pelaaja.ystavallisuus=-2
+            print(f"sinun ystävällisyys tällä hetkellä:{self.pelaaja.ystavallisuus} pistettä")
+        elif vaihtoehto == 2:
+            print("Et välittänyt mummon tilanteesta, menetät 2 hystävällisyys pistettä")
+            self.pelaaja.ystavallisuus=+2
+            print(f"sinun ystävällisyys tällä hetkellä:{self.pelaaja.ystavallisuus} pistettä")
+        else:
+            arpa=random.randint(1,2)
+
+            if arpa == 1: 
+                print("Kukaan ei antanut paikkaa")
+                print("Vaikka yritit saada mummolle paikan, et antanut omaa paikkaasi, menetät 1 ystävällisyys pisteen")
+                self.pelaaja.ystavallisuus=-1
+                print(f"sinun ystävällisyys tällä hetkellä:{self.pelaaja.ystavallisuus} pistettä")
+            else:
+                print("Sait toisen herran antamaan paikan, Hienoa! Saat yhden ystävällisyys pisteen!")
+                self.pelaaja.ystavallisuus=+1
+                print(f"sinun ystävällisyys tällä hetkellä:{self.pelaaja.ystavallisuus} pistettä")
+
+
+

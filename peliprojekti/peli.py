@@ -1,4 +1,4 @@
-from Asemat import Asema, Kirkkonummi, Espoo
+from Asemat import Asema, Kirkkonummi, Espoo, Leppavaara
 from pelaaja import Pelaaja
 from yleisfunktiot import havio
 import os
@@ -15,12 +15,12 @@ def aloita_peli(nimi):
     pelaaja1 = Pelaaja(nimi)
     kirkkonummi=Kirkkonummi("Kirkkonummi", pelaaja1)
     espoo=Espoo("Espoo", pelaaja1)
-    #leppavaara=Leppavaara("Leppävaara", pelaaja1)
+    leppavaara=Leppavaara("Leppävaara", pelaaja1)
     #pasila=Pasila("Pasila", pelaaja1)
     #helsinki=Helsinki("Helsinki", pelaaja1)
 
     
-    asemat=[kirkkonummi,espoo]
+    asemat=[kirkkonummi,espoo,leppavaara]
 
     for asema in asemat:
         
