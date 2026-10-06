@@ -1,4 +1,4 @@
-from Asemat import Asema, Kirkkonummi, Espoo, Leppavaara
+from Asemat import Asema, Kirkkonummi, Espoo, Leppavaara, Helsinki
 from pelaaja import Pelaaja
 from yleisfunktiot import havio
 import os
@@ -16,11 +16,10 @@ def aloita_peli(nimi):
     kirkkonummi=Kirkkonummi("Kirkkonummi", pelaaja1)
     espoo=Espoo("Espoo", pelaaja1)
     leppavaara=Leppavaara("Leppävaara", pelaaja1)
-    #pasila=Pasila("Pasila", pelaaja1)
-    #helsinki=Helsinki("Helsinki", pelaaja1)
+    helsinki=Helsinki("Helsinki", pelaaja1)
 
     
-    asemat=[kirkkonummi,espoo,leppavaara]
+    asemat=[kirkkonummi,espoo,leppavaara,helsinki]
 
     for asema in asemat:
         
@@ -29,3 +28,10 @@ def aloita_peli(nimi):
         if pelaaja1.aika <= 0:
                 havio("Aika loppui kesken :(")
         pelaaja1.sijainti+=1
+    peli_loppu(pelaaja1)
+
+def peli_loppu(pelaaja):
+    print("Hienoa! pääsit perille ajoissa!!")
+    tulokset={"Aikaa jäljellä":pelaaja.aika,"Ystävällisyys":pelaaja.ystavallisuus,"Esineet":pelaaja.esinelista}
+    for slotti, arvo in tulokset.items():
+         print(f"{slotti}: {arvo}")

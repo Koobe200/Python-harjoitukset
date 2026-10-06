@@ -1,3 +1,5 @@
+from yleisfunktiot import kysy_valinta
+
 
 class Asema:
     def __init__(self,nimi, pelaaja):
@@ -6,3 +8,6 @@ class Asema:
 
     def pelaa(self):
         pass
+
+    def kysy(self,vaihtoehdot):
+        return kysy_valinta(vaihtoehdot, self.pelaaja)

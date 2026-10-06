@@ -1,6 +1,6 @@
 import random
 import time
-from yleisfunktiot import kysy_valinta
+from yleisfunktiot import havio
 from .asema import Asema
 
 class Kirkkonummi(Asema):
@@ -25,7 +25,7 @@ class Kirkkonummi(Asema):
         if kiirre==True:
             print("Jos haluat ehtiä junaan sinun tulee valita seuraavista vaihtoehtoista:")
             print('(1) Varasta jonkun pyörä\n(2) Pummi kyyti')
-            vaihtoehto=kysy_valinta(2)
+            vaihtoehto=self.kysy(2)
             if vaihtoehto == 1:
                 self.pyora_varas()
             else: 
