@@ -39,6 +39,7 @@ def kysy_valinta(vaihtoehdot,pelaaja=None):
         if valinta == "valikko":
             if pelaaja != None:
                 pikku_valikko(pelaaja)
+                print("palasit peliin, jatka viimeisimmästä arvosta")
             continue
         try:
             valinta=int(valinta)
