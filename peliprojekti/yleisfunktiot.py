@@ -3,6 +3,13 @@ import os
 import json
 
 
+
+
+kansio = os.path.dirname(os.path.abspath(__file__))    
+talennus_kansio=os.path.join(kansio, "talennukset")
+os.makedirs(talennus_kansio, exist_ok=True)
+
+
 def age_check():
     nimi = input('Mikä nimesi on? ')    
     age = int(input('Mikä ikäsi on vuosina? '))
@@ -41,52 +48,35 @@ def havio(syy):
 
 def tallenna(pelaaja):
   print("Valitse yksi talennus sloteista:")
-  talennus_lista={"[1]":"tyhjä","[2]":"tyhjä","[3]":"tyhjä","[4]":"tyhjä"}
+  talennus_lista={"[1]":check_slot(1),"[2]":check_slot(2),"[3]":check_slot(3),"[4]":check_slot(4)}
   for slotti, arvo in talennus_lista.items():
     print(f"{slotti}: {arvo}")
-  talennus=kysy_valinta(4)
-  if talennus == 1: 
-     number=1
-  elif talennus == 2:
-     number=2 
-  elif talennus == 3:
-     number=3
-  else: 
-     number=4
+  number=kysy_valinta(4)
   peli_tallennus={
       "nimi": pelaaja.nimi,
-      "Sijainti": pelaaja.sijainti,
+      "sijainti": pelaaja.sijainti,
       "esinelista": pelaaja.esinelista,
       "aika": pelaaja.aika,
       "ystavallisyys": pelaaja.ystavallisuus
   }
-  with open(f"save{number}.json", "w") as tiedosto:
+  talennus=os.path.join(talennus_kansio, f"save{number}.json")
+  with open(talennus, "w") as tiedosto:
     json.dump(peli_tallennus, tiedosto)
   pikku_valikko(pelaaja)
 
 def avaa_tallennus(pelaaja):
   print("Valitse yksi talennus sloteista:")
-  talennus_lista={"[1]":"tyhjä","[2]":"tyhjä","[3]":"tyhjä","[4]":"tyhjä"}
+  talennus_lista={"[1]":check_slot(1),"[2]":check_slot(2),"[3]":check_slot(3),"[4]":check_slot(4)}
   for slotti, arvo in talennus_lista.items():
     print(f"{slotti}: {arvo}")
-  talennus=kysy_valinta(4)
-  if talennus == 1: 
-     number=1
-  elif talennus == 2:
-     number=2 
-  elif talennus == 3:
-     number=3
-  else: 
-     number=4
-  peli_tallennus={
-      "nimi": pelaaja.nimi,
-      "Sijainti": pelaaja.sijainti,
-      "esinelista": pelaaja.esinelista,
-      "aika": pelaaja.aika,
-      "ystavallisyys": pelaaja.ystavallisuus
-  }
-  with open(f"save{number}.json", "r") as tiedosto:
-    talennus=json.load(tiedosto) 
+  number=kysy_valinta(4)
+  talennus = os.path.join(talennus_kansio, f"save{number}.json")
+  try:
+    with open(talennus, "r") as tiedosto:
+        talennus=json.load(tiedosto) 
+  except FileNotFoundError:
+     print("Tyhjä slotti")
+     return False
 
   pelaaja.nimi=talennus['nimi']
   pelaaja.sijainti=talennus['sijainti']
@@ -94,8 +84,7 @@ def avaa_tallennus(pelaaja):
   pelaaja.aika=talennus['aika']
   pelaaja.ystavallisuus=talennus['ystavallisyys']
 
-    
-
+  return True
 
 
 
@@ -104,8 +93,18 @@ def pikku_valikko(pelaaja):
     print("(1) jatka\n(2) Talenna\n(3)palaa pää valikkoon ")
     valikko_valinta=kysy_valinta(3)
     if valikko_valinta == 1: 
-       return
+       return 
     elif valikko_valinta == 2:
        tallenna(pelaaja)
     elif valikko_valinta == 3:
-       pass
+       from paavalikko import paavalikko
+       paavalikko(pelaaja)
+
+def check_slot(number):
+   talennuspath=os.path.join(talennus_kansio, f"save{number}.json")
+   print(talennuspath)
+   if os.path.exists(talennuspath):
+      talennuslista="Käytössä"
+   else:
+      talennuslista="tyhjä"
+   return talennuslista

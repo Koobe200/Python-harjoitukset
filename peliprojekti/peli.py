@@ -1,34 +1,33 @@
-from Asemat import Asema, Kirkkonummi, Espoo, Leppavaara, Helsinki
-from pelaaja import Pelaaja
+from Asemat import Kirkkonummi, Espoo, Leppavaara, Helsinki
 from yleisfunktiot import havio
 import os
 
 
 
 
-def aloita_peli(nimi):
+def aloita_peli(pelaaja):
     kansio = os.path.dirname(__file__)                  
     intro = os.path.join(kansio, "intro.txt")
     with open(intro, "r") as tiedosto:
         intro = tiedosto.read()
         print(intro)
-    pelaaja1 = Pelaaja(nimi)
-    kirkkonummi=Kirkkonummi("Kirkkonummi", pelaaja1)
-    espoo=Espoo("Espoo", pelaaja1)
-    leppavaara=Leppavaara("Leppävaara", pelaaja1)
-    helsinki=Helsinki("Helsinki", pelaaja1)
+    pelaaja = pelaaja
+    kirkkonummi=Kirkkonummi("Kirkkonummi", pelaaja)
+    espoo=Espoo("Espoo", pelaaja)
+    leppavaara=Leppavaara("Leppävaara", pelaaja)
+    helsinki=Helsinki("Helsinki", pelaaja)
 
     
     asemat=[kirkkonummi,espoo,leppavaara,helsinki]
 
-    for asema in asemat:
+    for asema in asemat[pelaaja.sijainti:]:
         
         asema.pelaa()
-        print(f"aikaa on jäljellä {pelaaja1.aika} - minuuttia")
-        if pelaaja1.aika <= 0:
+        print(f"aikaa on jäljellä {pelaaja.aika} - minuuttia")
+        if pelaaja.aika <= 0:
                 havio("Aika loppui kesken :(")
-        pelaaja1.sijainti+=1
-    peli_loppu(pelaaja1)
+        pelaaja.sijainti+=1
+    peli_loppu(pelaaja)
 
 def peli_loppu(pelaaja):
     print("Hienoa! pääsit perille ajoissa!!")
