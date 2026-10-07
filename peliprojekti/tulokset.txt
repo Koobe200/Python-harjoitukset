@@ -1,0 +1,6 @@
+nimi:koobe
+pisteet:27
+nimi:minttu
+pisteet:48
+nimi:megabom
+pisteet:114

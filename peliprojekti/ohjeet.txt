@@ -1,13 +1,33 @@
 
+OHJEET
 
-Pian saat valita vaikeustason,jonka perusteella sinulle annetaan aikaraja, jossa sinun tulee päästä perille. 
+TAVOITE:
+Pääse Kirkkonummelta Helsinkiin ja opiskelijatapahtumaan ennen kuin aika loppuu.
+Matkalla on neljä asemaa: Kirkkonummi, Espoo, Leppävaara ja Helsinki.
+Valintasi vaikuttavat siihen, miten matka sujuu.
 
-Kuten kaikki tiedämme U- junalla meneminen ei ole aina niin helppoa ja tämän takia kohtaat erillaisia haasteita matkan varella, 
-joista isnun tulee selviytyä. Pelin aikana sinulta kysytään erillaisia kysymyksiä ja vaihtoehtoa, vastaa vain joko numerolla tai painamalla ENTER. 
+NÄIN VASTAAT:
+Kun peli kysyy jotain, kirjoita valitsemasi vaihtoehdon numero.
+Kun peli pyytää painamaan ENTER paina ENTER.
 
-Sinulla on kaksi muuttujaa: 
+KAKSI MITTARIA:
 
-AIKA: Seuraa tätä koko ajan, loppuessa häviät pelin
-YSTÄVÄLLISYYS: Tämän noustessa voit saada erillaisia etuja pelin aikana, laskiessa voit taas saada hankaluukisa
+AIKA:           Sinulla on alussa 120 minuuttia. Jokainen haaste vie aikaa.
+                Jos aika loppuu, häviät pelin.
 
-Paina ENTERIÄ kun olet lukenut ohjeet
+YSTÄVÄLLISYYS:  Nousee kun autat muita ja laskee kun olet töykeä.
+                Korkea ystävällisyys auttaa pelin aikana ja nostaa pisteitäsi.
+
+VALIKKO PELIN AIKANA:
+Kirjoita "valikko" minkä tahansa kysymyksen kohdalla päästäksesi pikkuvalikkoon.
+voit tallentaa pelin tai palata päävalikkoon.
+tallennetun pelin voi jatkaa päävalikon kohdasta "Jatka tallennuksesta".
+
+PISTEET
+Pisteet: jäljellä oleva aika + ystävällisyys x 10.
+Tuloksesi tallentuvat tiedostoon ja näet ne pelin lopussa.
+
+Huom: kaikki valinnat eivät vie perille. Junalla ja pyörällä pääsee pitkälle,
+mutta kaikki keinot eivät ole reiluja tai ympäristöystävällisiä.
+
+Paina ENTER palataksesi päävalikkoon.
